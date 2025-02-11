@@ -6,6 +6,7 @@ import com.aplication.account_service.entity.Movimiento;
 import com.aplication.account_service.presentation.presenter.ClientePresenter;
 import com.aplication.account_service.presentation.presenter.CuentaPresenter;
 import com.aplication.account_service.presentation.presenter.MovimientoPresenter;
+import com.aplication.account_service.repository.CuentaRepository;
 import com.aplication.account_service.repository.MovimientoRepository;
 import com.aplication.account_service.service.MovimientoService;
 import liquibase.repackaged.net.sf.jsqlparser.util.validation.ValidationException;
@@ -22,6 +23,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class MovimientoServiceImpl implements MovimientoService {
     private final MovimientoRepository movimientoRepository;
+    private final CuentaRepository cuentaRepository;
 
     @Override
     public List<MovimientoPresenter> getAllMovimientos() {
@@ -35,7 +37,22 @@ public class MovimientoServiceImpl implements MovimientoService {
 
     @Override
     public MovimientoPresenter createMovimiento(Movimiento movimiento) {
+        Cuenta cuenta = cuentaRepository.findById(movimiento.getCuenta().getCuentaId())
+                .orElseThrow(() -> new RuntimeException("Cuenta no encontrada"));
+        if (movimiento.getTipoMovimiento().equals("DEBITO")) {
+            if (cuenta.getSaldoInicial().compareTo(movimiento.getValor()) < 0) {
+                throw new RuntimeException("Saldo no disponible");
+            }
+            cuenta.setSaldoInicial(cuenta.getSaldoInicial().subtract(movimiento.getValor()));
+        } else if (movimiento.getTipoMovimiento().equals("CREDITO")) {
+            cuenta.setSaldoInicial(cuenta.getSaldoInicial().add(movimiento.getValor()));
+        } else {
+            throw new RuntimeException("Tipo de movimiento no válido");
+        }
+        movimiento.setSaldo(cuenta.getSaldoInicial());
+
         Movimiento savedMovimiento = movimientoRepository.save(movimiento);
+        cuentaRepository.save(cuenta);
         return buildMovimientoPresenter(savedMovimiento);
     }
 
