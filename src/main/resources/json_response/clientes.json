@@ -1,0 +1,46 @@
+[
+  {
+    "clienteId": "660e8400-e29b-41d4-a716-446655440000",
+    "contrasena": "1234",
+    "estado": true,
+    "nombre": "Jose Lema",
+    "genero": "Masculino",
+    "edad": 30,
+    "identificacion": "1234567890",
+    "direccion": "Otavalo sn y principal",
+    "telefono": "098254785"
+  },
+  {
+    "clienteId": "660e8400-e29b-41d4-a716-446655440001",
+    "contrasena": "5678",
+    "estado": true,
+    "nombre": "Marianela Montalvo",
+    "genero": "Femenino",
+    "edad": 25,
+    "identificacion": "0987654321",
+    "direccion": "Amazonas y NNUU",
+    "telefono": "097548965"
+  },
+  {
+    "clienteId": "660e8400-e29b-41d4-a716-446655440002",
+    "contrasena": "1245",
+    "estado": true,
+    "nombre": "Juan Osorio",
+    "genero": "Masculino",
+    "edad": 35,
+    "identificacion": "1122334455",
+    "direccion": "13 junio y Equinoccial",
+    "telefono": "098874587"
+  },
+  {
+    "clienteId": "f60f4b11-745c-4e8e-99a3-5871d01fd356",
+    "contrasena": "123456",
+    "estado": true,
+    "nombre": "Edison Farinango",
+    "genero": "masculino",
+    "edad": 32,
+    "identificacion": "1004356646",
+    "direccion": "Quito, Las Casas",
+    "telefono": "0996416130"
+  }
+]

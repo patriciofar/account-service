@@ -1,0 +1,102 @@
+[
+  {
+    "movimientoId": "880e8400-e29b-41d4-a716-446655440000",
+    "fecha": "2022-02-10T05:00:00.000+00:00",
+    "tipoMovimiento": "Depósito",
+    "valor": 600.000000,
+    "saldo": 700.000000,
+    "cuenta": {
+      "cuentaId": "770e8400-e29b-41d4-a716-446655440001",
+      "numeroCuenta": "225487",
+      "tipoCuenta": "Corriente",
+      "saldoInicial": 100.000000,
+      "estado": true,
+      "cliente": {
+        "nombre": "Marianela Montalvo",
+        "genero": "Femenino",
+        "edad": 25,
+        "identificacion": "0987654321",
+        "direccion": "Amazonas y NNUU",
+        "telefono": "097548965",
+        "clienteId": "660e8400-e29b-41d4-a716-446655440001",
+        "contrasena": "5678",
+        "estado": true
+      }
+    }
+  },
+  {
+    "movimientoId": "880e8400-e29b-41d4-a716-446655440001",
+    "fecha": "2022-02-08T05:00:00.000+00:00",
+    "tipoMovimiento": "Retiro",
+    "valor": -540.000000,
+    "saldo": 0.000000,
+    "cuenta": {
+      "cuentaId": "770e8400-e29b-41d4-a716-446655440003",
+      "numeroCuenta": "496825",
+      "tipoCuenta": "Ahorro",
+      "saldoInicial": 540.000000,
+      "estado": true,
+      "cliente": {
+        "nombre": "Marianela Montalvo",
+        "genero": "Femenino",
+        "edad": 25,
+        "identificacion": "0987654321",
+        "direccion": "Amazonas y NNUU",
+        "telefono": "097548965",
+        "clienteId": "660e8400-e29b-41d4-a716-446655440001",
+        "contrasena": "5678",
+        "estado": true
+      }
+    }
+  },
+  {
+    "movimientoId": "880e8400-e29b-41d4-a716-446655440002",
+    "fecha": "2022-02-10T05:00:00.000+00:00",
+    "tipoMovimiento": "Retiro",
+    "valor": -575.000000,
+    "saldo": 1425.000000,
+    "cuenta": {
+      "cuentaId": "770e8400-e29b-41d4-a716-446655440000",
+      "numeroCuenta": "478758",
+      "tipoCuenta": "Ahorro",
+      "saldoInicial": 2000.000000,
+      "estado": true,
+      "cliente": {
+        "nombre": "Jose Lema",
+        "genero": "Masculino",
+        "edad": 30,
+        "identificacion": "1234567890",
+        "direccion": "Otavalo sn y principal",
+        "telefono": "098254785",
+        "clienteId": "660e8400-e29b-41d4-a716-446655440000",
+        "contrasena": "1234",
+        "estado": true
+      }
+    }
+  },
+  {
+    "movimientoId": "880e8400-e29b-41d4-a716-446655440003",
+    "fecha": "2022-02-10T05:00:00.000+00:00",
+    "tipoMovimiento": "Depósito",
+    "valor": 150.000000,
+    "saldo": 150.000000,
+    "cuenta": {
+      "cuentaId": "770e8400-e29b-41d4-a716-446655440002",
+      "numeroCuenta": "495878",
+      "tipoCuenta": "Ahorro",
+      "saldoInicial": 0.000000,
+      "estado": true,
+      "cliente": {
+        "nombre": "Juan Osorio",
+        "genero": "Masculino",
+        "edad": 35,
+        "identificacion": "1122334455",
+        "direccion": "13 junio y Equinoccial",
+        "telefono": "098874587",
+        "clienteId": "660e8400-e29b-41d4-a716-446655440002",
+        "contrasena": "1245",
+        "estado": true
+      }
+    }
+  }
+]
