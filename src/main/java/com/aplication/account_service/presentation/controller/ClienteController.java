@@ -2,7 +2,6 @@ package com.aplication.account_service.presentation.controller;
 
 import com.aplication.account_service.entity.Cliente;
 import com.aplication.account_service.presentation.presenter.ClientePresenter;
-import com.aplication.account_service.repository.ClienteRepository;
 import com.aplication.account_service.service.ClienteService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

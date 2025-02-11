@@ -4,6 +4,7 @@ import com.aplication.account_service.entity.Cuenta;
 import com.aplication.account_service.presentation.presenter.CuentaPresenter;
 import com.aplication.account_service.repository.CuentaRepository;
 import com.aplication.account_service.service.CuentaService;
+import liquibase.repackaged.net.sf.jsqlparser.util.validation.ValidationException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +27,31 @@ public class CuentaServiceImpl implements CuentaService {
                 .collect(Collectors.toList());
         return allCuentasPresenter;
     }
+
+    @Override
+    public CuentaPresenter createCuenta(Cuenta cuenta) {
+        Cuenta savedCuenta = cuentaRepository.save(cuenta);
+        return buildCuentaPresenter(savedCuenta);
+    }
+
+    @Override
+    public CuentaPresenter updateCuenta(Cuenta cuenta) {
+        if (cuentaRepository.existsById(cuenta.getCuentaId())) {
+            return buildCuentaPresenter(cuentaRepository.save(cuenta));
+        } else {
+            throw new ValidationException("Cuenta no encontrado con ID: " + cuenta.getCuentaId());
+        }
+    }
+
+    @Override
+    public void deleteCuenta(UUID cuentaId) {
+        if (cuentaRepository.existsById(cuentaId)) {
+            cuentaRepository.deleteById(cuentaId);
+        } else {
+            throw new ValidationException("Cuenta no encontrado con ID: " + cuentaId);
+        }
+    }
+
 
     private CuentaPresenter buildCuentaPresenter(Cuenta cuenta) {
         return CuentaPresenter.builder()
